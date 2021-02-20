@@ -31,9 +31,9 @@ Dir.chdir('spec/dummy') do
 end
 
 # Remove after dropping support of Rails 4.2
-require_relative 'support/http_method_shim.rb'
+require_relative 'support/http_method_shim'
 
-require_relative 'support/doorkeeper_configuration.rb'
+require_relative 'support/doorkeeper_configuration'
 
 require 'factory_bot'
 FactoryBot.find_definitions

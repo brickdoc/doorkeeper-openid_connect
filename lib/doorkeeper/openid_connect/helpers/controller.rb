@@ -52,7 +52,7 @@ module Doorkeeper
                                redirect_uri: params[:redirect_uri],
                                response_on_fragment: pre_auth.response_on_fragment?,
                              )
-          end
+                           end
 
           response.headers.merge!(error_response.headers)
 

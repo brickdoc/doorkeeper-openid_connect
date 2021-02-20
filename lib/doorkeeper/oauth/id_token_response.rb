@@ -18,12 +18,10 @@ module Doorkeeper
       end
 
       def redirect_uri
-        Authorization::URIBuilder.uri_with_fragment(pre_auth.redirect_uri, redirect_uri_params)
+        Authorization::URIBuilder.uri_with_fragment(pre_auth.redirect_uri, body)
       end
 
-      private
-
-      def redirect_uri_params
+      def body
         {
           expires_in: auth.token.expires_in_seconds,
           state: pre_auth.state,

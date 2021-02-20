@@ -20,9 +20,11 @@ module Doorkeeper
         # TODO: delete this method and refactor response_on_fragment? method (below) when doorkeeper gem version constrains is > 5.2.2
         def error_response
           if error == :invalid_request
-            Doorkeeper::OAuth::InvalidRequestResponse.from_request(self, response_on_fragment: response_on_fragment?)
+            Doorkeeper::OAuth::InvalidRequestResponse.from_request(self,
+response_on_fragment: response_on_fragment?)
           else
-            Doorkeeper::OAuth::ErrorResponse.from_request(self, response_on_fragment: response_on_fragment?)
+            Doorkeeper::OAuth::ErrorResponse.from_request(self,
+response_on_fragment: response_on_fragment?)
           end
         end
 

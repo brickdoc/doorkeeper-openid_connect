@@ -14,7 +14,8 @@ module Doorkeeper
 
             if Doorkeeper.configuration.active_record_options[:establish_connection]
               [Doorkeeper::OpenidConnect::Request].each do |c|
-                c.send :establish_connection, Doorkeeper.configuration.active_record_options[:establish_connection]
+                c.send :establish_connection,
+Doorkeeper.configuration.active_record_options[:establish_connection]
               end
             end
           end

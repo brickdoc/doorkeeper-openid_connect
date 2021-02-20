@@ -205,7 +205,7 @@ describe Doorkeeper::OpenidConnect, 'configuration' do
 
     it 'can be set to other hosts' do
       Doorkeeper::OpenidConnect.configure do
-        discovery_url_options do |request|
+        discovery_url_options do |_request|
           {
             authorization: { host: 'alternate-authorization-host' },
             token: { host: 'alternate-token-host' },

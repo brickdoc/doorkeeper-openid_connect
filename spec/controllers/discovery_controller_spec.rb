@@ -79,7 +79,7 @@ describe Doorkeeper::OpenidConnect::DiscoveryController, type: :controller do
     context 'when the discovery_url_options option is set for all endpoints' do
       before do
         Doorkeeper::OpenidConnect.configure do
-          discovery_url_options do |request|
+          discovery_url_options do |_request|
             {
               authorization: { host: 'alternate-authorization.host' },
               token: { host: 'alternate-token.host' },
@@ -108,7 +108,7 @@ describe Doorkeeper::OpenidConnect::DiscoveryController, type: :controller do
     context 'when the discovery_url_options option is only set for some endpoints' do
       before do
         Doorkeeper::OpenidConnect.configure do
-          discovery_url_options do |request|
+          discovery_url_options do |_request|
             { authorization: { host: 'alternate-authorization.host' } }
           end
         end
@@ -176,7 +176,7 @@ describe Doorkeeper::OpenidConnect::DiscoveryController, type: :controller do
     context 'when the discovery_url_options option is set for webfinger endpoint' do
       before do
         Doorkeeper::OpenidConnect.configure do
-          discovery_url_options do |request|
+          discovery_url_options do |_request|
             { webfinger: { host: 'alternate-webfinger.host' } }
           end
         end
